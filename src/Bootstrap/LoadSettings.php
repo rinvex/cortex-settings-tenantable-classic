@@ -34,7 +34,7 @@ class LoadSettings
         $settings->set($tenantSettings = self::getTenantSettings()->toArray());
 
         // Override config options dynamically on the fly
-        collect(array_merge($appSettings, $tenantSettings))->filter(fn($setting) => $setting['override_config'] === true)->each(fn ($setting) => config()->set($setting['key'], $setting['value']));
+        collect(array_merge($appSettings, $tenantSettings))->filter(fn ($setting) => $setting['override_config'] === true)->each(fn ($setting) => config()->set($setting['key'], $setting['value']));
     }
 
     /**
