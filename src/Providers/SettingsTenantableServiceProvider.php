@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Cortex\Settings\Providers;
 
-use Cortex\Settings\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 use Rinvex\Support\Traits\ConsoleTools;
+use Cortex\Settings\Models\SettingTenantable;
 
 class SettingsTenantableServiceProvider extends ServiceProvider
 {
@@ -25,7 +25,7 @@ class SettingsTenantableServiceProvider extends ServiceProvider
     {
         // Bind eloquent models to IoC container
         $this->registerModels([
-            'rinvex.settings.setting' => Setting::class,
+            'rinvex.settings.setting' => SettingTenantable::class,
         ]);
     }
 }
